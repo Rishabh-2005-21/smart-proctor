@@ -1,0 +1,268 @@
+/* TeacherDashboard.css - Think Proctor Aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --tp-bg: #f8f9fa;
+  --tp-sidebar: #ffffff;
+  --tp-accent: #2563eb;
+  --tp-text-main: #1e293b;
+  --tp-text-muted: #64748b;
+  --tp-border: #e2e8f0;
+  --tp-card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.tp-body {
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+  background-color: var(--tp-bg);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar (Narrow) */
+.tp-sidebar {
+  width: 90px;
+  background: var(--tp-sidebar);
+  border-right: 1px solid var(--tp-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.tp-nav-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.tp-nav-item.active {
+  color: var(--tp-accent);
+  background: #eff6ff;
+  border-right: 3px solid var(--tp-accent);
+}
+
+.tp-nav-icon {
+  font-size: 1.4rem;
+}
+
+.tp-nav-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Main Content */
+.tp-main {
+  flex: 1;
+  padding: 24px 40px;
+}
+
+.tp-header {
+  margin-bottom: 32px;
+}
+
+.tp-logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.tp-logo {
+  font-weight: 900;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tp-page-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.tp-page-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: #0f172a;
+}
+
+.tp-header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.tp-btn-secondary {
+  padding: 12px 20px;
+  background: white;
+  border: 1px solid var(--tp-border);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.tp-btn-primary {
+  padding: 12px 24px;
+  background: var(--tp-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Grid Layout */
+.tp-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.tp-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--tp-border);
+  padding: 24px;
+  box-shadow: var(--tp-card-shadow);
+}
+
+.tp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.tp-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #334155;
+}
+
+/* Overview Section */
+.tp-overview-subgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tp-mini-card {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tp-mini-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.tp-mini-card-val {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+/* Charts Wrapper */
+.tp-chart-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+
+/* Gauge area mock */
+.tp-gauge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.tp-gauge-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.tp-gauge-val {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  display: flex;
+  flex-direction: column;
+}
+
+.tp-gauge-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.tp-gauge-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.tp-gauge-legend {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tp-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.tp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tp-card-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #334155;
+}
+
+table {
+  font-family: 'Public Sans', sans-serif;
+}

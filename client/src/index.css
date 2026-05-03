@@ -1,0 +1,150 @@
+:root, :root[data-theme="light"] {
+  --bg-main: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e2e8f0;
+  --bg-card-hover: #f9fafb;
+}
+
+:root[data-theme="dark"] {
+  --bg-main: #0f172a;
+  --bg-main-grad: radial-gradient(circle at 0 0, #1e293b, #0f172a 35%, #020617 70%);
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --bg-card-hover: #334155;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+/* 🌙 Dark Mode Overrides for Student Dashboard */
+[data-theme="dark"] .student-dashboard-grid * {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] div[style*="radial-gradient"] {
+  background: var(--bg-main-grad) !important;
+}
+
+[data-theme="dark"] .student-summary-card, 
+[data-theme="dark"] .student-notes-card, 
+[data-theme="dark"] .student-topic-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .student-topic-card h3,
+[data-theme="dark"] .student-notes-card h2,
+[data-theme="dark"] .student-summary-card div:nth-child(2) {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .student-summary-card p, 
+[data-theme="dark"] .student-summary-card div:nth-child(1),
+[data-theme="dark"] .student-notes-card p {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .student-note-tab:not(.student-note-tab--active) {
+  background-color: var(--bg-card-hover) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* 💎 Premium UI Utilities */
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+[data-theme="dark"] .glass-card {
+  background: rgba(30, 41, 59, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.premium-hover {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.premium-hover:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+  z-index: 10;
+}
+
+[data-theme="dark"] .premium-hover:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.sleek-btn {
+  transition: all 0.2s ease-in-out !important;
+}
+
+.sleek-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.sleek-btn:active {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] button {
+  background-color: #3b82f6; 
+}
+
+[data-theme="dark"] button:hover {
+  background-color: #2563eb; 
+}
+
+[data-theme="dark"] input, [data-theme="dark"] select {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4 {
+  color: var(--text-main);
+}
+
+/* Optional standard styles */
+
+button {
+  padding: 10px 16px;
+  width: auto;
+  margin-top: 0;
+  background-color: #2563eb;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+input, select {
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
